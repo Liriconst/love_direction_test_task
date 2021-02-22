@@ -1,0 +1,86 @@
+@import "../../shared/config";
+
+.snMain {
+  @include flexColumnRelative;
+  align-items: flex-end;
+
+  @media screen and (max-width: 699px) {
+    align-items: center;
+    margin-top: 15px;
+  }
+}
+
+.snHeader {
+  @include flexRowRelative;
+  justify-content: center;
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: black;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.snInput {
+  @include flexRowRelative;
+  height: 35px;
+  width: 260px;
+  font-family: Roboto, sans-serif !important;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 19.5px !important;
+  color: black;
+  border: solid 1.25px #237804;
+  border-radius: 0 !important;
+  padding-left: 10px;
+  margin-bottom: 10px;
+
+  &:focus {
+    outline: none !important;
+  }
+
+  &:hover {
+    border-color: #389e0d;
+  }
+}
+
+.snNotification {
+  @include flexColumnRelative;
+  width: 275px;
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #f5222d;
+  line-height: 1.25;
+}
+
+.snButton {
+  @include flexRowRelative;
+  height: 50px;
+  width: 275px;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  color: white;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #237804;
+  margin-top: 10px;
+
+  &:focus {
+    outline: none !important;
+  }
+
+  &:active {
+    background: #237804 !important;
+    box-shadow: 0 0 5px 2px #58b0ff;
+    transition: 0.5s ease !important;
+  }
+
+  &:hover {
+    background: #389e0d;
+    transition: 0.25s ease !important;
+  }
+}

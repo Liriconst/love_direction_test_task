@@ -1,0 +1,81 @@
+@import "../../shared/config";
+
+.srMain {
+  @include flexColumnRelative;
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 20px;
+
+  @media screen and (min-width: 700px) {
+    width: 300px;
+  }
+
+  @media screen and (max-width: 699px) {
+    width: 100%;
+  }
+}
+
+.srHeader {
+  @include flexRowRelative;
+  justify-content: center;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.subHeader {
+  @include flexRowRelative;
+  font-weight: 300;
+  margin-left: 5px;
+}
+
+.srNumbers {
+  @include flexRowRelative;
+  font-weight: 700;
+  color: deepskyblue;
+}
+
+.srPrimes {
+  @include flexRowRelative;
+  font-weight: 700;
+  color: limegreen;
+}
+
+
+.showNumberBefore {
+  display: flex;
+  position: absolute;
+  z-index: 100;
+  opacity: 100%;
+  transition: 1.5s ease-in;
+}
+
+.hideNumberBefore {
+  display: flex;
+  position: absolute;
+  z-index: 100;
+  opacity: 0;
+  transition: 1.5s ease-out;
+}
+
+.showNumberAfter {
+  display: flex;
+  position: absolute;
+  z-index: -100;
+  opacity: 100%;
+  transition: 1.5s ease-in;
+}
+
+.hideNumberAfter {
+  display: flex;
+  position: absolute;
+  z-index: -100;
+  opacity: 0;
+  transition: 1.5s ease-out;
+}
+
+.srSeparator {
+  @include flexRowRelative;
+  height: 1px;
+  width: 100%;
+  margin: 20px 0 16px 0;
+  background-color: black;
+}

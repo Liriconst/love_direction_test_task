@@ -1,0 +1,60 @@
+@import "../../shared/config";
+
+.orMain {
+  @include flexColumnRelative;
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 20px;
+
+  @media screen and (min-width: 700px) {
+    align-items: center;
+    height: calc(100vh - 175px);
+    width: 300px;
+  }
+
+  @media screen and (max-width: 699px) {
+    align-items: center;
+    height: calc(100vh - 370px);
+    width: 100%;
+  }
+}
+
+.orAllButtons {
+  @include flexColumnRelative;
+  align-items: center;
+  overflow-y: auto;
+
+  @media screen and (min-width: 700px) {
+    margin-left: 10px;
+  }
+}
+
+.orButton {
+  @include flexColumnRelative;
+  height: 50px;
+  width: 275px;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: white;
+  border: 0 !important;
+  border-radius: 2px !important;
+  background: #1890ff;
+  margin-bottom: 5px;
+
+  &:focus {
+    outline: none !important;
+  }
+
+  &:active {
+    background: #1890ff !important;
+    box-shadow: 0 0 5px 2px #58b0ff;
+    transition: 0.5s ease !important;
+  }
+
+  &:hover {
+    background: #40a9ff;
+    transition: 0.25s ease !important;
+  }
+}

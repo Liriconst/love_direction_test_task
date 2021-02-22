@@ -1,0 +1,35 @@
+@import "./shared/config";
+
+.appMain {
+  display: grid;
+  height: 100%;
+  width: 100%;
+
+  @media screen and (min-width: 700px) {
+    grid-template-columns: 1fr 61px 1fr;
+    grid-template-rows: 1fr;
+    margin-top: 15px;
+  }
+
+  @media screen and (max-width: 699px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 45px 1fr;
+  }
+}
+
+.appSeparator {
+  @include flexRowRelative;
+  @media screen and (min-width: 700px) {
+    height: 100%;
+    width: 1px;
+    background-color: black;
+    margin: 0 30px;
+  }
+
+  @media screen and (max-width: 699px) {
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    margin: 25px 0 20px 0;
+  }
+}
