@@ -44,7 +44,7 @@
   display: flex;
   position: absolute;
   z-index: 100;
-  opacity: 100%;
+  opacity: 1;
   transition: 1.5s ease-in;
 }
 
@@ -60,7 +60,7 @@
   display: flex;
   position: absolute;
   z-index: -100;
-  opacity: 100%;
+  opacity: 1;
   transition: 1.5s ease-in;
 }
 
