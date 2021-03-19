@@ -21,3 +21,8 @@ $size-width: ptr(886px);
   flex-direction: column;
   position: relative;
 }
+
+@mixin flexAbsolute {
+  display: flex;
+  position: absolute;
+}

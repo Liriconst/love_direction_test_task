@@ -18,6 +18,11 @@
   }
 }
 
+.orTitle {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
 .orAllButtons {
   @include flexColumnRelative;
   align-items: center;

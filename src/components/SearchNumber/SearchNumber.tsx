@@ -15,7 +15,7 @@ export default class SearchNumber extends React.Component<{
         const parsedInput = Number(inputNumber);
         const isValidNumber = !Number.isNaN(parsedInput);
 
-        if (!isValidNumber) {
+        if (!isValidNumber) { //Валидация вводимых пользователем значений
             this.setState({errorNotification: "Введено некорректное значение. Пожалуйста, используйте только цифры!"})
         } else if (!inputNumber || (parsedInput <= 0)) {
             this.setState({errorNotification: "Поле пустое, введён ноль или отрицательное значение. Пожалуйста, повторите ввод (>= 1)"})
@@ -27,8 +27,8 @@ export default class SearchNumber extends React.Component<{
 
     public render() {
         return (
-            <div className={styles.snMain}>
-                <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+            <div className={styles.snFrame}>
+                <div className={styles.snMain}>
                     <span className={styles.snHeader}>ВВЕДИТЕ ЧИСЛО:</span>
                     <input className={styles.snInput} ref={this.inputNumberRef} placeholder="целое положительное число"/>
                     <span className={styles.snNotification}>{this.state?.errorNotification}</span>

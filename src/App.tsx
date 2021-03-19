@@ -4,31 +4,27 @@ import SearchNumber from "./components/SearchNumber/SearchNumber";
 import SearchResult from "./components/SearchResult/SearchResult";
 import OldResults from "./components/OldResults/OldResults";
 import autobind from "autobind-decorator";
-import {getPrime, IOldResults} from "./utils/primeUitls";
+import {IOldResults} from "./utils/primeUitls"
+import {Main} from "./utils/primeUitls";
+
 
 export default class App extends React.Component<{}, {
     currentInputNumber?: number
     currentPrimeNumber?: number
 }> {
-    private readonly history?: IOldResults[] = [];
 
-    constructor(props: {}) {
-        super(props);
-        const lsHistory = localStorage.getItem("history");
-        this.history = lsHistory ? JSON.parse(lsHistory) : [];
-    }
-
+    //функция для изменения данных, при введении значения пользователем
     @autobind
     private onInputChanged(value: number) {
-        const prime = getPrime(value);
-        this.history.push({number: value, prime});
-        localStorage.setItem("history", JSON.stringify(this.history));
+        const prime = Main.getPrime(value); //вызываем функцию поиска простого числа
         this.setState({
             currentInputNumber: value,
             currentPrimeNumber: prime
         });
+        this.oldResultRef.current.workWithHistory(value, prime); //вызываем функцию для записи значений в localStorage
     }
 
+    //функция для передачи старых результатов в форму
     @autobind
     private onHistoryClick(value: IOldResults): void {
         this.searchNumberRef.current.inputNumberRef.current.value = value.number.toString();
@@ -39,6 +35,7 @@ export default class App extends React.Component<{}, {
     }
 
     private readonly searchNumberRef = React.createRef<SearchNumber>();
+    private readonly oldResultRef = React.createRef<OldResults>();
 
     public render() {
         return (
@@ -47,7 +44,7 @@ export default class App extends React.Component<{}, {
                 <span className={styles.appSeparator}/>
                 <div>
                     <SearchResult inputNumber={this.state?.currentInputNumber} primeNumber={this.state?.currentPrimeNumber}/>
-                    <OldResults history={this.history} onHistoryClick={this.onHistoryClick}/>
+                    <OldResults onHistoryClick={this.onHistoryClick} ref={this.oldResultRef}/>
                 </div>
             </div>
         );

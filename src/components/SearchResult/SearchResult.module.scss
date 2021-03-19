@@ -37,36 +37,33 @@
   @include flexRowRelative;
   font-weight: 700;
   color: limegreen;
+  margin-bottom: 5px;
 }
 
 
 .showNumberBefore {
-  display: flex;
-  position: absolute;
+  @include flexAbsolute;
   z-index: 100;
   opacity: 1;
   transition: 1.5s ease-in;
 }
 
 .hideNumberBefore {
-  display: flex;
-  position: absolute;
+  @include flexAbsolute;
   z-index: 100;
   opacity: 0;
   transition: 1.5s ease-out;
 }
 
 .showNumberAfter {
-  display: flex;
-  position: absolute;
+  @include flexAbsolute;
   z-index: -100;
   opacity: 1;
   transition: 1.5s ease-in;
 }
 
 .hideNumberAfter {
-  display: flex;
-  position: absolute;
+  @include flexAbsolute;
   z-index: -100;
   opacity: 0;
   transition: 1.5s ease-out;

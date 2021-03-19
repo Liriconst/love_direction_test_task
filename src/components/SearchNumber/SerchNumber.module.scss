@@ -1,6 +1,6 @@
 @import "../../shared/config";
 
-.snMain {
+.snFrame {
   @include flexColumnRelative;
   align-items: flex-end;
 
@@ -8,6 +8,11 @@
     align-items: center;
     margin-top: 15px;
   }
+}
+
+.snMain {
+  @include flexColumnRelative;
+  align-items: center;
 }
 
 .snHeader {
